@@ -1,0 +1,51 @@
+section {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  font-size: 2.0rem;
+  align-items: center;
+}
+
+h2 {
+  margin: 8px;
+}
+
+form {
+  align-items: center;
+  background-color: rgb(90, 104, 208, .5);
+  /* opacity: .7; */
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  width: 40%;
+}
+
+label {
+  margin: 5px;
+  text-align: center;
+}
+
+input,
+select {
+  background-color: rgb(90, 104, 208, .8);
+  border: 1.5px solid white;
+  font-size: 1.5rem;
+  height: 6vh;
+  margin: 10px;
+  opacity: unset;
+  padding: 5px;
+  width: 90%;
+}
+
+button {
+  background: rgb(90, 104, 208, .5);
+  border: none;
+  border-top: #ffffff 2px solid;
+  border-bottom: #ffffff 2px solid;
+  border-radius: 30px;
+  color: #ffffff;
+  font-size: 2rem;
+  height: 6vh;
+  width: 75%;
+}
+

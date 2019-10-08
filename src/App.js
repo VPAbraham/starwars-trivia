@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Landing from './Landing';
+import Landing from './Landing.js';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -36,7 +36,7 @@ class App extends Component {
           <Router>
             {/* <h2>App</h2> */}
             <Switch>
-              <Route exact path='/' component={Landing}>
+              <Route exact path='/'>
                 <Landing />
               </Route>
             </Switch>

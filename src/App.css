@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   background: url('./images/starry-night.jpg');
   height: 100vh;
