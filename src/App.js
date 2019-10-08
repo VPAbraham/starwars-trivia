@@ -23,22 +23,25 @@ class App extends Component {
         console.log(data)
         this.setState({
           isLoading: false,
-          movies: data
+          movies: data.results
       })
     })
   }
 
   render() {
+    console.log(this.state.movies)
     return (
       <div className='App'>
-        <Router>
-          <h2>App</h2>
-          <Switch>
-            <Route exact path='/' component={Landing}>
-              <Landing />
-            </Route>
-          </Switch>
-        </Router>  
+        <div className='cockpit'>
+          <Router>
+            {/* <h2>App</h2> */}
+            <Switch>
+              <Route exact path='/' component={Landing}>
+                <Landing />
+              </Route>
+            </Switch>
+          </Router>
+        </div>
       </div>
     );
   }
