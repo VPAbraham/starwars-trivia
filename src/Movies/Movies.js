@@ -13,11 +13,12 @@ const Movies = (props) => {
         releaseDate={movie.releaseDate}
         characters={movie.characters}
         openingCrawl={movie.openingCrawl}
+        updateMovieCharacters={props.updateMovieCharacters}
       />
     </li>)
   });
   return (
-    <section className='section section--movie-list'>
+    <section className='section section--movie-list'> 
       <ul className='ul ul--movie-list'>
         {movieCards}
       </ul>

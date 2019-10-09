@@ -7,9 +7,7 @@ import './Characters.css';
 const Characters = (props) => {
   const characterCards = props.characters.map(character => {
     return (<li key={character.episodeId} className='li li--character'>
-      <CharacterCard
-
-      />
+      <CharacterCard/>
     </li>)
   });
   return (

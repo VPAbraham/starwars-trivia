@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getCharacters } from '../apiCalls';
 import Loading from '../images/SWloadingIcon.gif';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
@@ -38,6 +39,12 @@ class App extends Component {
       .catch(error => this.setState({ error: error.message, isLoading: false }))
   }
 
+  updateMovieCharacters = (characterURLs, event) => {
+    event.preventDefault();
+    getCharacters(characterURLs)
+    // this.setState(movies: )
+  }
+
   updateUserInfo = (userInfo) => {
     const { userName, userQuote, skillLevel } = userInfo;
     this.setState({ userName, userQuote, userSkill: skillLevel });
@@ -54,7 +61,7 @@ class App extends Component {
               </Route>
               <Route path='/movies'>
                 {this.state.error && <h2>{this.state.error}</h2>}
-                <Movies movies={this.state.movies} />
+                <Movies movies={this.state.movies} updateMovieCharacters={this.updateMovieCharacters} />
                 {this.state.isLoading && <img src={Loading} alt='loading' />}
               </Route>
               <Route path='/favorites'>
