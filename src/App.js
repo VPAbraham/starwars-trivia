@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Favorites from './Favorites/Favorites'
 import Landing from './Landing';
 import Movies from './Movies';
 import './App.css';
