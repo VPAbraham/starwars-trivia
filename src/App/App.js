@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Loading from '../images/SWloadingIcon.gif';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';
@@ -9,6 +10,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      error: '',
       isLoading: true,
       movies: [],
       favorites: [],
@@ -31,8 +33,9 @@ class App extends Component {
           isLoading: false,
           movies: dataSubset
         }
-      );
-    })
+        )
+      })
+      .catch(error => this.setState({ error: error.message, isLoading: false }))
   }
 
   updateUserInfo = (userInfo) => {
@@ -50,10 +53,15 @@ class App extends Component {
                 <Landing updateUserInfo={this.updateUserInfo} />
               </Route>
               <Route path='/movies'>
+                {this.state.error && <h2>{this.state.error}</h2>}
                 <Movies movies={this.state.movies} />
+                {this.state.isLoading && <img src={Loading} alt='loading' />}
               </Route>
               <Route path='/favorites'>
                 <Favorites favorites={this.state.favorites}/>
+              </Route>
+              <Route>
+
               </Route>
             </Switch>
           </Router>
