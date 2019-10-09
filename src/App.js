@@ -23,7 +23,7 @@ class App extends Component {
       .then(data => {
         let dataSubset = []
         const dataTrim = data.results.map(result => {
-          const snippet = { title: result.title, episode_id: result.episode_id, releaseDate: result.release_date, characters: result.characters, openingCrawl: result.opening_crawl }
+          const snippet = { title: result.title, episodeId: result.episode_id, releaseDate: result.release_date, characters: result.characters, openingCrawl: result.opening_crawl }
           return dataSubset.push(snippet);
         })
         this.setState({
@@ -40,7 +40,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.movies)
     return (
       <div className='App'>
         <div className='cockpit'>
