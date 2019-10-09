@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './Landing.css';
 
 
@@ -45,7 +46,9 @@ class Landing extends Component {
             <option value='jedi knight'>Jedi Knight</option>
             <option value='jedi master'>Jedi Master</option>
           </select>
-          <button onClick={event => this.handleSubmit(event)}>Login</button>
+          <Link to='/movies'>
+            <button onClick={event => this.handleSubmit(event)}>Login</button>
+          </Link>  
         </form>
       </section>
     )
