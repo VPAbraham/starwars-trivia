@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Landing from './Landing.js';
+import Favorites from './Favorites/Favorites'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
