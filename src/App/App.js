@@ -47,10 +47,10 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path='/'>
-                <Landing updateUserInfo={this.updateUserInfo}/>
+                <Landing updateUserInfo={this.updateUserInfo} />
               </Route>
               <Route path='/movies'>
-                <Movies movies={this.state.movies}/>
+                <Movies movies={this.state.movies} />
               </Route>
               <Route path='/favorites'>
                 <Favorites favorites={this.state.favorites}/>
