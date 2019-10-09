@@ -19,7 +19,6 @@ class Landing extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const { userName, userQuote, skillLevel } = this.state;
     const keys = Object.keys(this.state);
     const empty = keys.filter(key => this.state[key] === '');
     return empty.length !== 0 ? this.handleError() : this.props.updateUserInfo(this.state);
