@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import FavoriteCard from '../FavoriteCard/FavoriteCard'
 import './Favorites.css'
 
 class Favorites extends Component {
@@ -9,7 +8,9 @@ class Favorites extends Component {
 
   render() {
     return (
-      <p>HI</p>
+      <section>
+        
+      </section>
     )
   }
 }
