@@ -6,7 +6,8 @@ import './Movies.css';
 
 const Movies = (props) => {
   const movieCards = props.movies.map(movie => {
-    return (<li className='li li--movie'>
+    return (
+    <li className='li li--movie'>
       <MovieCard
         key={movie.episodeId}
         title={movie.title}
@@ -15,7 +16,8 @@ const Movies = (props) => {
         characters={movie.characters}
         openingCrawl={movie.openingCrawl}
       />
-    </li>)  
+    </li>
+    )  
   })
   return (
     <section className='section section--movie-list'>

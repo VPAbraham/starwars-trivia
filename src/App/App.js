@@ -53,7 +53,7 @@ class App extends Component {
                 <Movies movies={this.state.movies}/>
               </Route>
               <Route path='/favorites'>
-                <Favorites />
+                <Favorites favorites={this.state.favorites}/>
               </Route>
             </Switch>
           </Router>
