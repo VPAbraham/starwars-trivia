@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Favorites from './Favorites/Favorites'
-import Landing from './Landing';
-import Movies from './Movies';
+import Favorites from '../Favorites/Favorites'
+import Landing from '../Landing/Landing';
+import Movies from '../Movies/Movies';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -47,10 +47,10 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path='/'>
-                <Landing updateUserInfo={this.updateUserInfo}/>
+                <Landing updateUserInfo={this.updateUserInfo} />
               </Route>
               <Route path='/movies'>
-                <Movies movies={this.state.movies}/>
+                <Movies movies={this.state.movies} />
               </Route>
             </Switch>
           </Router>
