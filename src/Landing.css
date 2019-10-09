@@ -37,6 +37,7 @@ select {
   width: 90%;
 }
 
+Link,
 button {
   background: rgb(90, 104, 208, .5);
   border: none;
@@ -46,6 +47,6 @@ button {
   color: #ffffff;
   font-size: 2rem;
   height: 6vh;
-  width: 75%;
+  width: 15vw;
 }
 

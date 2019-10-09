@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Landing from './Landing.js';
+import Landing from './Landing';
+import Movies from './Movies';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -20,11 +21,16 @@ class App extends Component {
     fetch('https://swapi.co/api/films/')
       .then(response => response.json())
       .then(data => {
-        console.log(data)
+        let dataSubset = []
+        const dataTrim = data.results.map(result => {
+          const snippet = { title: result.title, episode_id: result.episode_id, releaseDate: result.release_date, characters: result.characters, openingCrawl: result.opening_crawl }
+          return dataSubset.push(snippet);
+        })
         this.setState({
           isLoading: false,
-          movies: data.results
-      })
+          movies: dataSubset
+        }
+      );
     })
   }
 
@@ -39,10 +45,12 @@ class App extends Component {
       <div className='App'>
         <div className='cockpit'>
           <Router>
-            {/* <h2>App</h2> */}
             <Switch>
               <Route exact path='/'>
                 <Landing updateUserInfo={this.updateUserInfo}/>
+              </Route>
+              <Route path='/movies'>
+                <Movies movies={this.state.movies}/>
               </Route>
             </Switch>
           </Router>
