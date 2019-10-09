@@ -28,6 +28,11 @@ class App extends Component {
     })
   }
 
+  updateUserInfo = (userInfo) => {
+    const { userName, userQuote, skillLevel } = userInfo;
+    this.setState({ userName, userQuote, userSkill: skillLevel });
+  }
+
   render() {
     console.log(this.state.movies)
     return (
@@ -37,7 +42,7 @@ class App extends Component {
             {/* <h2>App</h2> */}
             <Switch>
               <Route exact path='/'>
-                <Landing />
+                <Landing updateUserInfo={this.updateUserInfo}/>
               </Route>
             </Switch>
           </Router>
