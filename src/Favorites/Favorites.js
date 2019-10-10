@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Favorites.css'
 
 
@@ -12,9 +12,13 @@ const Favorites = (props) => {
   return (
     <section className='section--favorites'>
       <header className='header--favorites'>Favorites</header>
-      <div className='div--favorites'>
-        {characterCards}
-      </div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>1
+      </ul>
     </section>
   )
 }
