@@ -76,14 +76,24 @@ class App extends Component {
         <div className='cockpit'>
           <Router>
             <Switch>
-              <Route exact path='/' render={() => <Landing updateUserInfo={ this.updateUserInfo } /> } />
+              <Route exact path='/'>
+                <Landing updateUserInfo={this.updateUserInfo} />
+              </Route>
               <Route path='/movies'>
                 {this.state.error && <h2>{this.state.error}</h2>}
                 <Movies movies={this.state.movies} />
-                {this.state.isLoading && <img src={Loading} alt='loading' />}
+                {this.state.isLoading && 
+                <div className='load-icon'>
+                  <p>LOADING</p>
+                  <img src={Loading} alt='loading' />
+                </div>}
               </Route>
-              <Route path='/favorites' render={ () => <Favorites favorites={ this.state.favorites } />} />
-              <Route path='/characters' render={ () => <Characters character={ this.characters }/>} />
+              <Route path='/favorites'>
+                <Favorites favorites={this.state.favorites}/>
+              </Route>
+              <Route path='/characters' >
+                <Characters />
+              </Route>
             </Switch>
           </Router>
         </div>

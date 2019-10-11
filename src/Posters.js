@@ -6,7 +6,7 @@ import episode5 from './images/episode-5.png';
 import episode6 from './images/episode-6.png';
 import episode7 from './images/episode-7.png';
 
-const moviePosters = {
+const MoviePosters = {
   1: episode1,
   2: episode2,
   3: episode3,
@@ -16,4 +16,4 @@ const moviePosters = {
   7: episode7,
 }
 
-export default moviePosters;
+export default MoviePosters;
