@@ -19,8 +19,9 @@ const Characters = (props) => {
   });
   return (
     <section className='section section--character-list'>
+      <p>HIHIHIHIHIH</p>
       <ul className='ul ul--character-list'>
-        {characterCards}
+        {/* {characterCards} */}
       </ul>
     </section>
   )
