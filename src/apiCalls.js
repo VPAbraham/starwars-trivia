@@ -5,8 +5,6 @@ export const getChars = (charUrls) => {
     .then(results => results.json())
     .then(results => charactersForMovie.push(results))
     )
-  
   console.log(charactersForMovie)
   return charactersForMovie  
-
 }

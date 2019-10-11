@@ -3,7 +3,6 @@ import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
 
 
-
 const Movies = (props) => {
   const movieCards = props.movies.map(movie => {
     return (<li key={movie.episodeId} className='li li--movie'>

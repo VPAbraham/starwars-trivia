@@ -57,7 +57,10 @@ class App extends Component {
       let chars = castLists.map(castList =>
         getChars(castList)
         )
-      this.setState({characters: chars})  
+      this.setState({
+        characters: chars,
+        isLoading: false
+      })  
       console.log(this.state)
       })
   }
@@ -73,20 +76,14 @@ class App extends Component {
         <div className='cockpit'>
           <Router>
             <Switch>
-              <Route exact path='/'>
-                <Landing updateUserInfo={this.updateUserInfo} />
-              </Route>
+              <Route exact path='/' render={() => <Landing updateUserInfo={ this.updateUserInfo } /> } />
               <Route path='/movies'>
                 {this.state.error && <h2>{this.state.error}</h2>}
                 <Movies movies={this.state.movies} />
                 {this.state.isLoading && <img src={Loading} alt='loading' />}
               </Route>
-              <Route path='/favorites'>
-                <Favorites favorites={this.state.favorites}/>
-              </Route>
-              <Route path='/characters'>
-                <Characters />
-              </Route>
+              <Route path='/favorites' render={ () => <Favorites favorites={ this.state.favorites } />} />
+              <Route path='/characters' render={ () => <Characters character={ this.characters }/>} />
             </Switch>
           </Router>
         </div>
