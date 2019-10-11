@@ -1,11 +1,14 @@
 import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
-
+import MoviePosters from '../Posters'
+console.log(MoviePosters)
 
 
 const Movies = (props) => {
+  const allArt = MoviePosters;
   const movieCards = props.movies.map(movie => {
+    const movieArt = allArt[`${movie.episodeId}`]
     return (<li key={movie.episodeId} className='li li--movie'>
       <MovieCard
         title={movie.title}
@@ -13,6 +16,7 @@ const Movies = (props) => {
         releaseDate={movie.releaseDate}
         characters={movie.characters}
         openingCrawl={movie.openingCrawl}
+        poster={movieArt}
       />
     </li>)
   });

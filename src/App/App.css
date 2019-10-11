@@ -19,3 +19,9 @@
 ul {
   margin: 0;
 }
+
+.load-icon {
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}
