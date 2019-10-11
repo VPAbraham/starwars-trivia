@@ -16,3 +16,9 @@
   width: 100vw;
   z-index: -500;
 }
+
+.load-icon {
+  color: white;
+  font-size: 50px;
+  text-align: center;
+}

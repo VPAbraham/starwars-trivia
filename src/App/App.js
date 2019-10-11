@@ -57,7 +57,10 @@ class App extends Component {
       let chars = castLists.map(castList =>
         getChars(castList)
         )
-      this.setState({characters: chars})  
+      this.setState({
+        characters: chars,
+        isLoading: false
+      })  
       console.log(this.state)
       })
   }
@@ -79,12 +82,16 @@ class App extends Component {
               <Route path='/movies'>
                 {this.state.error && <h2>{this.state.error}</h2>}
                 <Movies movies={this.state.movies} />
-                {this.state.isLoading && <img src={Loading} alt='loading' />}
+                {this.state.isLoading && 
+                <div className='load-icon'>
+                  <p>LOADING</p>
+                  <img src={Loading} alt='loading' />
+                </div>}
               </Route>
               <Route path='/favorites'>
                 <Favorites favorites={this.state.favorites}/>
               </Route>
-              <Route path='/characters'>
+              <Route path='/characters' >
                 <Characters />
               </Route>
             </Switch>
