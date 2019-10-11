@@ -50,3 +50,29 @@ button {
   width: 15vw;
 }
 
+.footer--user-info,
+.footer--user-bar {
+  background: #000000;
+  bottom: 0;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-around;
+  height: 10vh;
+  margin: 0;
+  padding: 1%;
+  position: absolute;
+  width: 100vw;
+}
+
+.footer--user-bar {
+  z-index: 10;
+}
+
+.footer--user-info {
+  bottom: 0;
+}
+
+.p--user-info {
+  margin: 0;
+}
+

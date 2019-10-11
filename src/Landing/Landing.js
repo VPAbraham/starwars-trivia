@@ -49,6 +49,9 @@ class Landing extends Component {
             <button onClick={event => this.handleSubmit(event)}>Login</button>
           </Link>  
         </form>
+      <footer className='footer footer--user-bar'>
+        <p className='p p--user-info'>User Information Bar</p>
+      </footer>      
       </section>
     )
   }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Loading from '../images/SWloadingIcon.gif';
+import CharactersData from '../sample-data/characters';
+import Characters from '../Characters/Characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';
@@ -60,12 +62,17 @@ class App extends Component {
               <Route path='/favorites'>
                 <Favorites favorites={this.state.favorites}/>
               </Route>
-              <Route>
-
+              <Route path='/characters'>
+                <Characters characters={CharactersData}/>
               </Route>
             </Switch>
           </Router>
         </div>
+        <footer className='footer footer--user-info'>
+          <p className='p p--user-name'>{this.state.userName}</p>
+          <p className='p p--user-quote'>{this.state.userQuote}</p>
+          <p className='p p--user-skill'>{this.state.userSkill}</p>          
+        </footer>  
       </div>
     );
   }

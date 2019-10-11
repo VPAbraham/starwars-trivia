@@ -1,3 +1,4 @@
+.section--character-list,
 .section--movie-list {
   align-items: right;
   display: flex;
@@ -5,6 +6,7 @@
   white-space: nowrap;
 }
 
+.ul--character-list,
 .ul--movie-list {
   background-color: rgb(90, 104, 208, .5);
   align-items: center;
@@ -14,6 +16,7 @@
   list-style: none;
 }
 
+.li--character,
 .li--movie {
   margin: 15px;
   text-align: center;

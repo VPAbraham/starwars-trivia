@@ -11,8 +11,11 @@
 
 .cockpit {
   background: url('../images/cockpit.png') top center no-repeat;
-  background-size: cover;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   z-index: -500;
+}
+
+ul {
+  margin: 0;
 }
