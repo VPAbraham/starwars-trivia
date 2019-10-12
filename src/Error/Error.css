@@ -1,0 +1,15 @@
+.section--error-msg {
+  align-items: center;
+  background-color: rgba(182, 18, 18, 0.95);
+  border: 6px solid white;
+  display: flex;
+  flex-direction: column;
+  padding: 5%;
+  position: absolute;
+  top: 25vh;
+  z-index: 100;
+}
+
+.button--error {
+  width: 80%;
+}
