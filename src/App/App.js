@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Loading from '../images/SWloadingIcon.gif';
 import CharactersData from '../sample-data/characters';
-import Characters from '../Characters/Characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';

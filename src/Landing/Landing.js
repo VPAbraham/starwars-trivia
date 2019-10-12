@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import StarWarsLogo from '../images/StarWarsLogo.png';
 import './Landing.css';
 
 
@@ -31,7 +32,8 @@ class Landing extends Component {
   render() {
     return (
       <section>
-        <h1>StarWars</h1>
+        {/* <h1>StarWars</h1> */}
+        <img className='img img--logo-main' src={StarWarsLogo} alt='star wars'/>
         <h2>Nerd Trove</h2>
         <form>
           <label htmlFor='userName'>Enter your name Jedi</label>
