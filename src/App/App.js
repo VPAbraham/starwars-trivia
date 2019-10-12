@@ -5,8 +5,7 @@ import Characters from '../Characters/Characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';
-import Characters from '../Characters/Characters';
-import { getChars } from '../apiCalls'
+import { getChars, getUrlData } from '../apiCalls'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -50,22 +49,31 @@ class App extends Component {
   fetch('https://swapi.co/api/films/')
     .then(response => response.json())
       .then(data => {
+      this.setState({
+        isLoading: true
+      })  
       let sortedResults = data.results.sort((a, b) => 
-        a.episode_id - b.episode_id)
-
+        a.episode_id - b.episode_id);
+      
       let castLists = sortedResults.map(data => {
         return data.characters
-      })
-      let chars = castLists.map(castList =>
-        getChars(castList)
+      });
+
+      let chars = castLists.map(charUrls =>
+        getChars(charUrls)
         )
       this.setState({
         characters: chars,
         isLoading: false
-      })  
-      console.log(this.state)
-      })
+      });  
+    });
+
+    // fetch('https://swapi.co/api/films/')
+    //   .then(response => response.json())
+    //   .then(data => console.log('API chain', data))
   }
+
+  
   updateUserInfo = (userInfo) => {
     const { userName, userQuote, skillLevel } = userInfo;
     this.setState({ userName, userQuote, userSkill: skillLevel });
@@ -94,7 +102,7 @@ class App extends Component {
                 <Favorites favorites={this.state.favorites}/>
               </Route>
               <Route path='/characters'>
-                <Characters characters={CharactersData}/>
+                {!this.state.isLoading && <Characters characters={this.state.characters}/>}
               </Route>
             </Switch>
           </Router>
