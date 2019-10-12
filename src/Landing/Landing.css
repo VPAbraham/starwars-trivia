@@ -1,4 +1,4 @@
-section {
+.section--landing-form {
   color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -6,8 +6,14 @@ section {
   align-items: center;
 }
 
+.img--logo-main {
+  height: 12vh;
+  width: 25vw;
+}
+
 h2 {
-  margin: 8px;
+  font-family: 'Bangers', cursive;
+  margin: 3px 0 8px 0;
 }
 
 form {
@@ -56,6 +62,7 @@ button {
   bottom: 0;
   color: #ffffff;
   display: flex;
+  font-family: 'Bangers', cursive;
   justify-content: space-around;
   height: 10vh;
   margin: 0;
@@ -70,6 +77,7 @@ button {
 
 .footer--user-info {
   bottom: 0;
+  font-size: 1.5rem;
 }
 
 .p--user-info {

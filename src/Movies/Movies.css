@@ -1,18 +1,21 @@
 .section--character-list,
 .section--movie-list {
   align-items: right;
+  background-color: rgb(90, 104, 208, .5);
+  color: #ffffff;
   display: flex;
+  font-size: 2.25rem;
   overflow: auto;
   white-space: nowrap;
 }
 
 .ul--character-list,
 .ul--movie-list {
-  background-color: rgb(90, 104, 208, .5);
-  align-items: center;
+  
+  /* align-items: center; */
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   list-style: none;
 }
 

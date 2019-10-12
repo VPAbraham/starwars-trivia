@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Error from '../Error/Error';
+import StarWarsLogo from '../images/StarWarsLogo.png';
 import './Landing.css';
 
 
@@ -10,6 +12,7 @@ class Landing extends Component {
       userName: '',
       userQuote: '',
       skillLevel: '',
+      error: '',
     }
   }
 
@@ -25,13 +28,19 @@ class Landing extends Component {
   }
 
   handleError = () => {
-    console.log('hi');
+    this.setState({ error: 'All Fields Required Padawan. You Must Focus!' });
+  }
+
+  clearError = (event) => {
+    event.preventDefault();
+    this.setState({ error: '' })
   }
 
   render() {
     return (
-      <section>
-        <h1>StarWars</h1>
+      <section className='section section--landing-form'>
+        {/* <h1>StarWars</h1> */}
+        <img className='img img--logo-main' src={StarWarsLogo} alt='star wars'/>
         <h2>Nerd Trove</h2>
         <form>
           <label htmlFor='userName'>Enter your name Jedi</label>
@@ -49,9 +58,10 @@ class Landing extends Component {
             <button onClick={event => this.handleSubmit(event)}>Login</button>
           </Link>  
         </form>
-      <footer className='footer footer--user-bar'>
+        <footer className='footer footer--user-bar'>
         <p className='p p--user-info'>User Information Bar</p>
-      </footer>      
+        </footer>
+        {this.state.error && <Error msg={this.state.error} clearError={this.clearError}/>}
       </section>
     )
   }
