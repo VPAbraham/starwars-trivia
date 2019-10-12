@@ -31,7 +31,7 @@ class Landing extends Component {
 
   render() {
     return (
-      <section>
+      <section className='section section--landing-form'>
         {/* <h1>StarWars</h1> */}
         <img className='img img--logo-main' src={StarWarsLogo} alt='star wars'/>
         <h2>Nerd Trove</h2>
