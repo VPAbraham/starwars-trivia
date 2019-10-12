@@ -1,8 +1,27 @@
+.div--movie-card {
+  border: 1px solid #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .h3--movie-card {
   font-size: 1.5rem;
+  margin: 3px;
+}
+
+.p--movie-release,
+.p--movie-episode {
+  margin: 8px;
 }
 
 .img--poster {
   height: auto;
+  margin: 8px 0 15px 0;
   width: 18vw;
+}
+
+.button--movie-characters {
+  margin: 10px 0 8px 0;
 }
