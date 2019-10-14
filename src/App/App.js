@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Loading from '../images/SWloadingIcon.gif';
 import CharactersData from '../sample-data/characters';
+import EjectButton from '../Button/Button';
 import Characters from '../Characters/Characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
@@ -8,6 +9,7 @@ import Movies from '../Movies/Movies';
 import { getChars } from '../apiCalls'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { browserHistory } from 'react-router';
 
 
 
@@ -47,9 +49,6 @@ class App extends Component {
   fetch('https://swapi.co/api/films/')
     .then(response => response.json())
       .then(data => {
-      // this.setState({
-      //   isLoading: true
-      // })  
       let sortedResults = data.results.sort((a, b) => 
         a.episode_id - b.episode_id);
       
@@ -69,39 +68,45 @@ class App extends Component {
     this.setState({ userName, userQuote, userSkill: skillLevel });
   }
 
+  clearUserInfo = () => {
+    console.log(this.props.history)
+    this.setState({userName: '', userQuote: '', userSkill: ''})
+  }
+
   render() {
     return (
-      <div className='App'>
-        <div className='cockpit'>
-          <Router>
-            <Switch>
-              <Route exact path='/'>
-                <Landing updateUserInfo={this.updateUserInfo} />
-              </Route>
-              <Route path='/movies'>
-                {this.state.error && <h2>{this.state.error}</h2>}
-                <Movies movies={this.state.movies} />
-                {this.state.isLoading && 
-                <div className='load-icon'>
-                  <p>LOADING</p>
-                  <img src={Loading} alt='loading' />
-                </div>}
-              </Route>
-              <Route path='/favorites'>
-                <Favorites favorites={this.state.favorites}/>
-              </Route>
-              <Route path='/characters'>
-                <Characters characters={this.state.characters}/>
-              </Route>
-            </Switch>
-          </Router>
+      <Router>
+        <div className='App'>
+          <div className='cockpit'>
+              <Switch>
+                <Route exact path='/'>
+                  <Landing updateUserInfo={this.updateUserInfo} />
+                </Route>
+                <Route path='/movies'>
+                  {this.state.error && <h2>{this.state.error}</h2>}
+                  <Movies movies={this.state.movies} />
+                  {this.state.isLoading && 
+                  <div className='load-icon'>
+                    <p>LOADING</p>
+                    <img src={Loading} alt='loading' />
+                  </div>}
+                </Route>
+                <Route path='/favorites'>
+                  <Favorites favorites={this.state.favorites} />
+                </Route>
+                <Route path='/characters'>
+                  <Characters characters={this.state.characters} />
+                </Route>
+              </Switch>
+          </div>
+          <footer className='footer footer--user-info'>
+            <p className='p p--user-name'>{this.state.userName}</p>
+            <p className='p p--user-quote'>{this.state.userQuote}</p>
+            <p className='p p--user-skill'>{this.state.userSkill}</p>
+            <EjectButton clearUserInfo={this.clearUserInfo}/>
+          </footer>  
         </div>
-        <footer className='footer footer--user-info'>
-          <p className='p p--user-name'>{this.state.userName}</p>
-          <p className='p p--user-quote'>{this.state.userQuote}</p>
-          <p className='p p--user-skill'>{this.state.userSkill}</p>          
-        </footer>  
-      </div>
+      </Router>
     );
   }
 }
