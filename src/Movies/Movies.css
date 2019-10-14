@@ -11,11 +11,8 @@
 
 .ul--character-list,
 .ul--movie-list {
-  
-  /* align-items: center; */
   display: flex;
   flex-direction: row;
-  /* justify-content: space-around; */
   list-style: none;
 }
 
@@ -24,5 +21,4 @@
   margin: 15px;
   text-align: center;
   width: 30vw;
-
 }

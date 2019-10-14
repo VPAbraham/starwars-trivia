@@ -1,0 +1,7 @@
+.button--logout {
+  align-self: center;
+  background: red;
+  border-radius: 80px;
+  color: #ffffff;
+  width: 9vw;
+}
