@@ -4,7 +4,7 @@ import CharactersData from '../sample-data/characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';
-import { getChars, getUrlData } from '../apiCalls'
+import { getChars } from '../apiCalls'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -61,15 +61,9 @@ class App extends Component {
       let chars = castLists.map(charUrls =>
         getChars(charUrls)
         )
-      this.setState({
-        characters: chars,
-        isLoading: false
-      });  
-    });
 
-    // fetch('https://swapi.co/api/films/')
-    //   .then(response => response.json())
-    //   .then(data => console.log('API chain', data))
+
+    });
   }
 
   
@@ -79,7 +73,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className='App'>
         <div className='cockpit'>
@@ -101,7 +94,7 @@ class App extends Component {
                 <Favorites favorites={this.state.favorites}/>
               </Route>
               <Route path='/characters'>
-                {!this.state.isLoading && <Characters characters={this.state.characters}/>}
+                <Characters characters={this.state.characters}/>
               </Route>
             </Switch>
           </Router>

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie should 1`] = `undefined`;
+
+exports[`Movie should match snapshot with all data passed in correctly 1`] = `undefined`;
+
+exports[`Movie should match snpashot with all data passed in correctly 1`] = `undefined`;

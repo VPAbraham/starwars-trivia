@@ -1,9 +1,9 @@
-/* .section--character-list {
-  width: 100%;
+.movie-crawl {
+  width: 50%;
   height: 100%;
   background: #000;
   overflow: hidden;
-} */
+}
 
 .fade {
   position: relative;
@@ -14,14 +14,14 @@
   z-index: 1;
 }
 
-.star-wars-ep {
+.star-wars {
   display: flex;
   justify-content: center;
   position: relative;
   height: 800px;
   color: #feda4a;
   font-family: 'Pathway Gothic One', sans-serif;
-  font-size: 500%;
+  font-size: 300%;
   font-weight: 600;
   letter-spacing: 6px;
   line-height: 150%;
@@ -29,30 +29,34 @@
   text-align: justify;
 }
 
-.film-crawl {
+.crawl {
   position: relative;
+  padding: 60%;
   top: 99999px;
   transform-origin: 50% 100%;
   animation: crawl 60s linear;
 }
 
-.film-crawl>.title {
+.text-block {
+  width: 50%;
+}
+
+.crawl > .title {
   font-size: 90%;
   text-align: center;
 }
 
-.film-crawl>.title h1 {
+.crawl > .title h1 {
   margin: 0 0 100px;
   text-transform: uppercase;
 }
 
-@keyframes film-crawl {
-  0% {
+@keyframes crawl {
+	0% {
     top: -100px;
-    transform: rotateX(20deg) translateZ(0);
+    transform: rotateX(20deg)  translateZ(0);
   }
-
-  100% {
+	100% { 
     top: -6000px;
     transform: rotateX(25deg) translateZ(-2500px);
   }
