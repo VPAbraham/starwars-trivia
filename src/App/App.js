@@ -62,15 +62,9 @@ class App extends Component {
       let chars = castLists.map(charUrls =>
         getChars(charUrls)
         )
-      this.setState({
-        characters: chars,
-        isLoading: false
-      });  
-    });
 
-    // fetch('https://swapi.co/api/films/')
-    //   .then(response => response.json())
-    //   .then(data => console.log('API chain', data))
+
+    });
   }
 
   
@@ -102,7 +96,7 @@ class App extends Component {
                 <Favorites favorites={this.state.favorites}/>
               </Route>
               <Route path='/characters'>
-                {!this.state.isLoading && <Characters characters={this.state.characters}/>}
+                <Characters characters={this.state.characters}/>
               </Route>
             </Switch>
           </Router>
