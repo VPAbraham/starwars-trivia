@@ -5,7 +5,7 @@ import Characters from '../Characters/Characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';
-import { getChars, getUrlData } from '../apiCalls'
+import { getChars } from '../apiCalls'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
@@ -74,7 +74,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <div className='App'>
         <div className='cockpit'>

@@ -6,8 +6,7 @@ import Favorites from './Favorites'
 describe('Favorites', () => {
   let wrapper, favProps;
   beforeEach(() => {
-    favProps = 
-    {
+    favProps = {
       favorites: []
     }
 
