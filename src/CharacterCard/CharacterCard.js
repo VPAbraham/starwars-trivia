@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
 import './CharacterCard.css';
+import propTypes from 'prop-types'
 
 
 const CharacterCard = ({ name, homeworld, homeworldPop, species, relatedFilms, isFavorite }) => {
@@ -22,3 +22,12 @@ const CharacterCard = ({ name, homeworld, homeworldPop, species, relatedFilms, i
 }
 
 export default CharacterCard;
+
+CharacterCard.propTypes = {
+  name: propTypes.string,
+  homeworld: propTypes.string,
+  homeworldPop: propTypes.number,
+  species: propTypes.string,
+  relatedFilms: propTypes.array,
+  isFavorite: propTypes.string
+}

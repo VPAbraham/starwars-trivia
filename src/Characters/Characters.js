@@ -1,6 +1,7 @@
 import React from 'react';
 import CharacterCard from '../CharacterCard/CharacterCard';
 import './Characters.css';
+import propTypes from 'prop-types';
 
 
 
@@ -43,3 +44,7 @@ const Characters = (props) => {
 
 
 export default Characters;
+
+Characters.propTypes = {
+  characters: propTypes.array
+}
