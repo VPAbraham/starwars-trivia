@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Loading from '../images/SWloadingIcon.gif';
 import CharactersData from '../sample-data/characters';
+import Characters from '../Characters/Characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';
@@ -26,7 +27,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-
     fetch('https://swapi.co/api/films/')
       .then(response => response.json())
       .then(data => {
@@ -40,17 +40,16 @@ class App extends Component {
         this.setState({
           isLoading: false,
           movies: dataSubset
-        }
-        )
+        })
       })
       .catch(error => this.setState({ error: error.message, isLoading: false }))
 
   fetch('https://swapi.co/api/films/')
     .then(response => response.json())
       .then(data => {
-      this.setState({
-        isLoading: true
-      })  
+      // this.setState({
+      //   isLoading: true
+      // })  
       let sortedResults = data.results.sort((a, b) => 
         a.episode_id - b.episode_id);
       
@@ -61,8 +60,6 @@ class App extends Component {
       let chars = castLists.map(charUrls =>
         getChars(charUrls)
         )
-
-
     });
   }
 
