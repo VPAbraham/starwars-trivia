@@ -56,6 +56,11 @@ button {
   width: 15vw;
 }
 
+.buttonLink {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .footer--user-info,
 .footer--user-bar {
   background: #000000;

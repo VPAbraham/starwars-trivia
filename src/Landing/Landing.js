@@ -12,22 +12,31 @@ class Landing extends Component {
       userName: '',
       userQuote: '',
       skillLevel: '',
+      formComplete: false,
       error: '',
     }
   }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value })
+    this.checkFormFields();
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
-    const keys = Object.keys(this.state);
-    const empty = keys.filter(key => this.state[key] === '');
-    return empty.length !== 0 ? this.handleError() : this.props.updateUserInfo(this.state);
+    this.props.updateUserInfo(this.state); 
   }
 
-  handleError = () => {
+  checkFormFields = () => {
+    const keys = Object.keys(this.state);
+    const userKeys = keys.filter(key => key.includes('user'));    
+    const empty = userKeys.filter(key => this.state[key] === '');
+    console.log(empty)
+    return empty.length === 0 ? this.setState({ formComplete: true}) : this.setState({ formComplete: false});
+  }
+
+  handleError = (event) => {
+    event.preventDefault()
     this.setState({ error: 'All Fields Required Padawan. You Must Focus!' });
   }
 
@@ -54,9 +63,15 @@ class Landing extends Component {
             <option value='jedi knight'>Jedi Knight</option>
             <option value='jedi master'>Jedi Master</option>
           </select>
-          <Link to='/movies'>
-            <button onClick={event => this.handleSubmit(event)}>Login</button>
-          </Link>  
+          {this.state.formComplete &&
+            <button onClick={event => this.handleSubmit(event)}>
+              <Link className='buttonLink' to='/movies'>
+                Login
+              </Link>
+            </button>}
+          {!this.state.formComplete &&
+            <button onClick={event => this.handleError(event)}>
+                Login</button>}
         </form>
         <footer className='footer footer--user-bar'>
         <p className='p p--user-info'>User Information Bar</p>
