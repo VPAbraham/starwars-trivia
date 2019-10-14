@@ -2,10 +2,10 @@ import React from 'react';
 import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
 import MoviePosters from '../Posters'
-console.log(MoviePosters)
-
+import propTypes from 'prop-types'
 
 const Movies = (props) => {
+  console.log(props)
   const allArt = MoviePosters;
   const movieCards = props.movies.map(movie => {
     const movieArt = allArt[`${movie.episodeId}`]
@@ -32,3 +32,7 @@ const Movies = (props) => {
 
 
 export default Movies;
+
+Movies.propTypes = {
+  movies: propTypes.array
+}
