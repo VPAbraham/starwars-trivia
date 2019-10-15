@@ -40,5 +40,5 @@ describe('Landing', () => {
       wrapper.instance().handleChange(mockEvent);
 
       expect(wrapper.state('skillLevel')).toEqual(expected);
-    })
+    });
 })
