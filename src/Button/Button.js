@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Button.css';
+import propTypes from 'prop-types';
+
 
 const Button = ({ method, path }) => {
   let passedMsg = path === '/' ? 'Eject' : 'Favorites';
@@ -15,3 +17,8 @@ const Button = ({ method, path }) => {
 
 
 export default Button;
+
+Button.propTypes = {
+  method: propTypes.func,
+  path: propTypes.string
+}
