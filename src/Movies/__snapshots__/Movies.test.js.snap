@@ -1,11 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Movie should match snapshot with all data passed in correctly 1`] = `
+exports[`Movies should match the snapshot 1`] = `
 <section
   className="section section--movie-list"
 >
   <ul
     className="ul ul--movie-list"
-  />
+  >
+    <li
+      className="li li--movie"
+    >
+      <MovieCard
+        title="StarWars"
+      />
+    </li>
+  </ul>
 </section>
 `;

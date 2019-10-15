@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard should match the snapshot 1`] = `
+<div
+  className="div div--movie-card"
+>
+  <h3
+    className="h3 h3--movie-card"
+  />
+  <p
+    className="p p--movie-episode"
+  >
+    Episode 
+  </p>
+  <p
+    className="p p--movie-release"
+  />
+  <img
+    alt="bang"
+    className="img img--poster"
+  />
+  <button
+    className="button button--movie-characters"
+    onClick={[Function]}
+  >
+    <Link
+      to="/characters"
+    >
+      Characters
+    </Link>
+  </button>
+</div>
+`;
