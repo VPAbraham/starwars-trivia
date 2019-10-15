@@ -1,18 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Favorites from './Favorites'
-
+import Favorites from './Favorites';
 
 describe('Favorites', () => {
-  let wrapper, favProps;
+  let wrapper
+  const removeFavoriteCharacter = jest.fn()
+  let characters = [{name: 'char1'}]
   beforeEach(() => {
-    favProps = {
-      favorites: []
-    }
-
-    wrapper = shallow(<Favorites favProps = {favProps} />)
-  });
-  it('should match snapshot with all data passed in correctly', () => {
+    wrapper = shallow(
+      <Favorites
+        favorites={characters}
+      />
+    )
+  })
+  it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   });
-});
+})
