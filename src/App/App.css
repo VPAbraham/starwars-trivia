@@ -16,6 +16,13 @@
   z-index: -500;
 }
 
+.h2--error {
+  color: #ffffff;
+  left: 30vw;
+  position: absolute;
+  top: 15vh;
+}
+
 ul {
   margin: 0;
 }

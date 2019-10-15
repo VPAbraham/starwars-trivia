@@ -3,9 +3,20 @@
   font-size: 1.2rem;
   height: 65vh;
   overflow-y: scroll;
+  text-align: justify;
   width: 30vw;
+}
+
+.h3--character-card {
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
 }
 
 .p--char-data {
   text-decoration: underline;
+}
+
+.li--char-films {
+  padding: 2px;
 }

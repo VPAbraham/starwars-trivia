@@ -2,15 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Button.css';
 
-const EjectButton = ({ clearUserInfo }) => {
+const Button = ({ method, path, msg }) => {
+  let passedMsg = path === '/' ? 'Eject' : 'Favorites';
   return (
-    <Link to='/'>
-      <button className='button button--logout' onClick={clearUserInfo}>
-        Eject
+    <Link to={`${path}`}>
+      <button className='button button--logout' onClick={method}>
+        {passedMsg}
       </button>
     </Link>
   )
 }
 
 
-export default EjectButton;
+export default Button;
