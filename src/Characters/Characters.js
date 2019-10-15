@@ -11,12 +11,10 @@ const Characters = (props) => {
       <CharacterCard
         name={character.name}
         homeworld={character.homeworld}
-        homeworldPop={character.homeworld.population || 3}
         species={character.species}
         relatedFilms={character.films}
         isFavorite={false}
-        addFav={props.addFav}
-        removeFav={props.removeFav}
+        method={props.addFav}
       />
     </li>)
   });

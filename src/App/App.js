@@ -4,6 +4,7 @@ import Characters from '../Characters/Characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';
+import Button from '../Button/Button';
 import { getChars } from '../apiCalls'
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -47,9 +48,12 @@ class App extends Component {
       this.setState({
         isLoading: false,
         movies: data,
-        // characters: characters
       })
     })
+    .catch(error => this.setState({
+      error: error.message,
+      isLoading: false
+    }))
   }
 
   getCurrentMovieChars = (characters, event) => {
@@ -62,28 +66,38 @@ class App extends Component {
     this.setState({ userName, userQuote, userSkill: skillLevel });
   }
 
-  addFavCharacter = ({name, homeworld, isFavorite, relatedFilms, species}) => {
-    let character = {name, homeworld, isFavorite: true, relatedFilms, species}
-    return !this.state.favorites.includes(character) ? this.setState({favorites: [...this.state.favorites, character]}) : null
+  clearUserInfo = () => {
+    this.setState({
+      userName: '',
+      userQuote: '',
+      userSkill: ''
+    })
   }
 
-  removeFavCharacter = (character) => {
-    let newFavs = this.state.filter(char => !character)
-    // character.isFavorite = false;
+  addFavCharacter = ({name, homeworld, isFavorite, relatedFilms, species}) => {
+    let character = { name, homeworld, isFavorite: true, relatedFilms, species }
+    let duplicates = this.state.favorites.filter(char => char.name === name);
+    return !duplicates.length ? this.setState({favorites: [...this.state.favorites, character]}) : null
+  }
+
+  removeFavCharacter = ({ name, homeworld, isFavorite, relatedFilms, species }) => {
+    console.log(name) 
+    let character = {name, homeworld, isFavorite: false, relatedFilms, species}
+    let newFavs = this.state.favorites.filter(char => char.name !== name)
     this.setState({favorites: newFavs})
   } 
 
   render() {
     return (
       <div className='App'>
-        <div className='cockpit'>
-          <Router>
+        <Router>
+          <div className='cockpit'>
             <Switch>
               <Route exact path='/'>
                 <Landing updateUserInfo={this.updateUserInfo} />
               </Route>
               <Route path='/movies'>
-                {this.state.error && <h2>{this.state.error}</h2>}
+                {this.state.error && <h2 className='h2 h2--error'>{this.state.error}</h2>}
                 <Movies movies={this.state.movies} getCurrentMovieChars={this.getCurrentMovieChars}/>
                 {this.state.isLoading && 
                 <div className='load-icon'>
@@ -92,22 +106,35 @@ class App extends Component {
                 </div>}
               </Route>
               <Route path='/favorites'>
-                <Favorites favorites={this.state.favorites}/>
+                <Favorites
+                  favorites={this.state.favorites}
+                  addFav={this.addFavCharacter}
+                  removeFav={this.removeFavCharacter} />
               </Route>
               <Route path='/characters'>
                 <Characters
                   characters={this.state.currentCharacters}
-                  addFav={this.addFavCharacter}
+                    addFav={this.addFavCharacter}
                   removeFav={this.removeFavCharacter} />
               </Route>
             </Switch>
-          </Router>
-        </div>
-        <footer className='footer footer--user-info'>
-          <p className='p p--user-name'>{this.state.userName}</p>
-          <p className='p p--user-quote'>{this.state.userQuote}</p>
-          <p className='p p--user-skill'>{this.state.userSkill}</p>          
-        </footer>  
+          </div>
+          <footer className='footer footer--user-info'>
+            <p className='p p--user-name'>{this.state.userName}</p>
+            <p className='p p--user-quote'>{this.state.userQuote}</p>
+            <p className='p p--user-skill'>{this.state.userSkill}</p>
+            <Button
+              method={this.clearUserInfo}
+              path='/'
+              msg='Eject'
+            />
+            <Button
+              method={null}
+              path='/favorites'
+              msg='Favs'
+            />
+          </footer>  
+        </Router>
       </div>
     );
   }
