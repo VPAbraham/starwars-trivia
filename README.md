@@ -1,4 +1,4 @@
-# Ideabox Redux
+# Star Wars Nerd Trove
 #### A Turing Mod 3 Project
 
 
