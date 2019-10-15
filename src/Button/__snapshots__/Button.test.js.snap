@@ -1,7 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Button should match the snapshot 1`] = `
-<Button
-  clearUserInfo={[MockFunction]}
-/>
+<Link
+  to="/"
+>
+  <button
+    className="button button--logout"
+    onClick={[MockFunction]}
+  >
+    Eject
+  </button>
+</Link>
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Button.css';
 
-const Button = ({ method, path, msg }) => {
+const Button = ({ method, path }) => {
   let passedMsg = path === '/' ? 'Eject' : 'Favorites';
   return (
     <Link to={`${path}`}>
