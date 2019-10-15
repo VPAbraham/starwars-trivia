@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import Loading from '../images/SWloadingIcon.gif';
-import CharactersData from '../sample-data/characters';
 import Characters from '../Characters/Characters';
 import Favorites from '../Favorites/Favorites'
 import Landing from '../Landing/Landing';
 import Movies from '../Movies/Movies';
 import { getChars } from '../apiCalls'
 import './App.css';
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
 
@@ -18,7 +17,7 @@ class App extends Component {
       error: '',
       isLoading: true,
       movies: [],
-      characters: [],
+      // characters: [],
       favorites: [],
       userName: '',
       userQuote: '',
@@ -47,9 +46,8 @@ class App extends Component {
 
   fetch('https://swapi.co/api/films/')
     .then(response => response.json())
-      .then(data => {
+    .then(data => {
         const { results } = data;
-        console.log(results)
         const filmData = results.map(film => {
            const { characters, episode_id, opening_crawl, release_date, title } = film;
            return getChars(characters)
@@ -57,20 +55,11 @@ class App extends Component {
         }
         )
         return Promise.all(filmData)
-
-
-      // let sortedResults = data.results.sort((a, b) =>
-      //   a.episode_id - b.episode_id);
-
-      // let castLists = sortedResults.map(data => {
-      //   return data.characters
-      // });
-
-      // let chars = castLists.map(charUrls =>
-      //   getChars(charUrls)
-      //   )
     })
-    .then(data => console.log(data))
+    .then(data => this.setState({
+      isLoading: false,
+      movies: data
+    }))
   }
 
   
@@ -80,6 +69,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.movies[0]['characters'])
     return (
       <div className='App'>
         <div className='cockpit'>
@@ -101,7 +91,7 @@ class App extends Component {
                 <Favorites favorites={this.state.favorites}/>
               </Route>
               <Route path='/characters'>
-                <Characters characters={this.state.characters}/>
+                <Characters characters/>
               </Route>
             </Switch>
           </Router>

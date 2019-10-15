@@ -31,7 +31,6 @@ class Landing extends Component {
     const keys = Object.keys(this.state);
     const userKeys = keys.filter(key => key.includes('user'));    
     const empty = userKeys.filter(key => this.state[key] === '');
-    console.log(empty)
     return empty.length === 0 ? this.setState({ formComplete: true}) : this.setState({ formComplete: false});
   }
 
