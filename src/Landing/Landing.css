@@ -7,8 +7,8 @@
 }
 
 .img--logo-main {
-  height: 12vh;
-  width: 25vw;
+  max-height: 12vh;
+  width: auto;
 }
 
 h2 {
