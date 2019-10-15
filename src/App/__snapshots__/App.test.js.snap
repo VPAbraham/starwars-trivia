@@ -50,7 +50,6 @@ exports[`App should match the snapshot 1`] = `
         <Characters
           addFav={[Function]}
           characters={Array []}
-          removeFav={[Function]}
         />
       </Route>
     </Switch>

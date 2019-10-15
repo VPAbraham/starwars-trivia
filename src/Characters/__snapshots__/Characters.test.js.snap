@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Characters should match the snapshot 1`] = `
+<section
+  className="section section--character-list"
+>
+  <ul
+    className="ul ul--character-list"
+  >
+    <li
+      className="li li--character"
+      key="char1"
+    >
+      <CharacterCard
+        isFavorite={false}
+        method={[MockFunction]}
+        name="char1"
+      />
+    </li>
+    <li
+      className="li li--character"
+      key="char2"
+    >
+      <CharacterCard
+        isFavorite={false}
+        method={[MockFunction]}
+        name="char2"
+      />
+    </li>
+  </ul>
+  <div
+    className="movie-crawl"
+  >
+    <div
+      className="fade"
+    />
+    <section
+      className="star-wars"
+    >
+      <div
+        className="crawl"
+      >
+        <div
+          className="title"
+        >
+          <p>
+            Episode IV
+          </p>
+          <h1>
+            A New Hope
+          </h1>
+        </div>
+        <p>
+          It is a period of civil war. 
+          <br />
+          Rebel spaceships, striking from a hidden base, 
+          <br />
+          have won their first victory against the evil Galactic Empire.
+        </p>
+        <p>
+          During the battle, Rebel spies managed to steal secret plans to the Empire’s ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.
+        </p>
+        <p>
+          Pursued by the Empire’s sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy….
+        </p>
+      </div>
+    </section>
+  </div>
+</section>
+`;

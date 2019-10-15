@@ -112,8 +112,8 @@ class App extends Component {
               <Route path='/characters'>
                 <Characters
                   characters={this.state.currentCharacters}
-                    addFav={this.addFavCharacter}
-                  removeFav={this.removeFavCharacter} />
+                  addFav={this.addFavCharacter}
+                />
               </Route>
             </Switch>
           </div>
