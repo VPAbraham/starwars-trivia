@@ -105,7 +105,6 @@ class App extends Component {
               <Route path='/favorites'>
                 <Favorites
                   favorites={this.state.favorites}
-                  addFav={this.addFavCharacter}
                   removeFav={this.removeFavCharacter} />
               </Route>
               <Route path='/characters'>

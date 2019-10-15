@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Favorites should match snapshot with all data passed in correctly 1`] = `undefined`;
+exports[`Favorites should match the snapshot 1`] = `
+<section
+  className="section--character-list"
+>
+  <header
+    className="header--favorites"
+  >
+    Favorites
+  </header>
+  <ul
+    className="ul ul--character-list"
+  >
+    <li
+      className="li li--character"
+      key="char1"
+    >
+      <CharacterCard
+        isFavorite={false}
+        name="char1"
+      />
+    </li>
+  </ul>
+</section>
+`;

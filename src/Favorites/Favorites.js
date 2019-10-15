@@ -6,7 +6,6 @@ import propTypes from 'prop-types'
 
 
 const Favorites = (props) => {
-  console.log(props.favorites.length)
   const favoriteCards = props.favorites.length ? props.favorites.map(favorite => {
     return ((<li key={favorite.name} className='li li--character'>
       <CharacterCard
