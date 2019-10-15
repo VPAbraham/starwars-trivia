@@ -6,12 +6,12 @@ import propTypes from 'prop-types';
 
 
 const CharacterCard = (props) => {
-  const { name, homeworld, species, relatedFilms, isFavorite } = props
-  const films = relatedFilms.map(film => <li className='li li--char-films'>{film}</li>)
+  const { name, homeworld, species, relatedFilms, isFavorite, method } = props
+  const films = relatedFilms.map(film => <li className='li li--char-films' key={name}>{film}</li>)
   const favIcon = !isFavorite ? notFav : favorite;
   return (
     <div className='div div--character-card'>
-      <h3 className='h3 h3--character-card'><img className='img--fav-icon' src={favIcon} onClick={event => props.method({ name, homeworld, species, relatedFilms, isFavorite })}/>{name}</h3>
+      <h3 className='h3 h3--character-card'><img className='img--fav-icon' src={favIcon} onClick={event => method({ name, homeworld, species, relatedFilms, isFavorite })}/>{name}</h3>
       <ul>
         <p className='p p--char-data'>Homeworld</p>
         <li>{homeworld[0]}</li>
@@ -29,7 +29,7 @@ export default CharacterCard;
 
 CharacterCard.propTypes = {
   name: propTypes.string,
-  homeworld: propTypes.string,
+  homeworld: propTypes.array,
   homeworldPop: propTypes.number,
   species: propTypes.string,
   relatedFilms: propTypes.array,

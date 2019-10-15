@@ -20,7 +20,5 @@ describe('Button', () => {
   it('should run clearUserInfo on click', () => {
     wrapper.find('button').simulate('click')
     expect(clearUserInfo).toHaveBeenCalled();
-  })
-
-
+  });
 })
