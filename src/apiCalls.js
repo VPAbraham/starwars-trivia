@@ -2,26 +2,55 @@ export const getChars = (charUrls) => {
   const characterSets = charUrls.map(url => {
     return fetch(url)
     .then(response => response.json())
-    .then(character => ({ 
-      name: character.name, 
-      films: getDataChar(character, 'films', 'title'), 
-      species: getDataChar(character, 'species', 'name'),
-      homeworld: getHomeworld(character)
-    }))
-    .then(character => character)
+    .then(character => { 
+      const { name, homeworld, films, species }  = character;
+      return getHomeworld(homeworld)
+      .then(homeworld => ({name, homeworld, films, species}))
+    })
+    .then(character => {
+      const { name, homeworld, films, species } = character;
+      return getFilms(films)
+        .then(films => ({ name, homeworld, films, species }))
+    })
+    .then(character => {
+      const { name, homeworld, films, species } = character;
+      return getSpecies(species)
+        .then(species => ({ name, homeworld, films, species }))
+    })
   });
   return Promise.all(characterSets)
 }
 
-export const getDataChar = (character, property, metric) => {
-  return Promise.all(character[property].map(url => {
-    return fetch(url)
+const getFilms = (films) => {
+  const filmData = films.map(film => {
+    return fetch(film)
     .then(response => response.json())
-  }))
+    .then(film => {
+      const { title } = film
+      return title
+    })
+  })
+  return Promise.all(filmData)
 }
 
-export const getHomeworld = (character) => {
-  return fetch(character.homeworld)
+const getSpecies = (url) => {
+  if (url){
+  return fetch(url)
   .then(response => response.json())
-  .then(homeworld => homeworld.name)
+  .then(species => {
+    const { name } = species;
+    return name;
+  })
+  } else {
+    return 'unknown'
+  }
+}
+
+const getHomeworld = (url) => {
+  return fetch(url)
+  .then(response => response.json())
+  .then(homeworld => {
+    const { name, population } = homeworld
+    return [name, population];
+  })
 }
