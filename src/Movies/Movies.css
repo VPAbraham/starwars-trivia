@@ -5,6 +5,7 @@
   color: #ffffff;
   display: flex;
   font-size: 2.25rem;
+  height: 70vh;
   overflow: auto;
   white-space: nowrap;
 }

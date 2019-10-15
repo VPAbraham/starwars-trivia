@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import './MovieCard.css';
 import propTypes from 'prop-types';
 
-const MovieCard = ({ title, episodeId, releaseDate, characters, openingCrawl, poster }) => {
+const MovieCard = ({ title, episodeId, releaseDate, characters, openingCrawl, poster, getCurrentMovieChars }) => {
   
   return (
     <div className='div div--movie-card'>
@@ -11,9 +11,11 @@ const MovieCard = ({ title, episodeId, releaseDate, characters, openingCrawl, po
       <p className='p p--movie-episode'>Episode {episodeId}</p>
       <p className='p p--movie-release'>{releaseDate}</p>
       <img className='img img--poster' src={poster} alt='bang'/>
-      <Link to='/characters'>
-        <button className='button button--movie-characters' data-characters={characters} data-crawl={openingCrawl}>Characters</button>
-      </Link>
+      <button className='button button--movie-characters' onClick={event => getCurrentMovieChars(characters, event)} data-crawl={openingCrawl}>
+        <Link to='/characters'>
+          Characters
+        </Link>
+      </button>
     </div>
   )
 }
