@@ -3,11 +3,12 @@ import MovieCard from '../MovieCard/MovieCard';
 import './Movies.css';
 import MoviePosters from '../Posters'
 import propTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 const Movies = (props) => {
   const allArt = MoviePosters;
   const movieCards = props.movies.map(movie => {
-    const movieArt = allArt[`${movie.episodeId}`]
+    const movieArt = allArt[`${movie.episode_id}`]
     return (
     <li key={movie.episodeId} className='li li--movie'>
       <MovieCard
