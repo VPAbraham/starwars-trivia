@@ -17,7 +17,7 @@ class App extends Component {
       error: '',
       isLoading: true,
       movies: [],
-      // characters: [],
+      currentCharacters: [],
       favorites: [],
       userName: '',
       userQuote: '',
@@ -26,24 +26,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // fetch('https://swapi.co/api/films/')
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     let dataSubset = [];
-    //     const dataTrim = data.results.map(result => {
-    //       const snippet = { title: result.title, episodeId: result.episode_id,
-    //          releaseDate: result.release_date, characters: result.characters, 
-    //          openingCrawl: result.opening_crawl };
-    //       return dataSubset.push(snippet);
-    //     });
-          
-    //     this.setState({
-    //       isLoading: false,
-    //       movies: dataSubset
-    //     })
-    //   })
-    //   .catch(error => this.setState({ error: error.message, isLoading: false }))
-
   fetch('https://swapi.co/api/films/')
     .then(response => response.json())
     .then(data => {
@@ -52,24 +34,35 @@ class App extends Component {
            const { characters, episode_id, opening_crawl, release_date, title } = film;
            return getChars(characters)
            .then(characters => ({ characters, episode_id, opening_crawl, release_date, title}))
-        }
-        )
-        return Promise.all(filmData)
+        })
+      return Promise.all(filmData)
     })
-    .then(data => this.setState({
-      isLoading: false,
-      movies: data
-    }))
+    .then(data => {
+      const characters = data.map(film => {
+        return ({
+          episodeId: film.episode_id,
+          characters: film.characters
+        })
+      })
+      this.setState({
+        isLoading: false,
+        movies: data,
+        // characters: characters
+      })
+    })
   }
 
-  
+  getCurrentMovieChars = (characters, event) => {
+    event.preventDefault();
+    this.setState({currentCharacters: characters})
+  }
+
   updateUserInfo = (userInfo) => {
     const { userName, userQuote, skillLevel } = userInfo;
     this.setState({ userName, userQuote, userSkill: skillLevel });
   }
 
   render() {
-    console.log(this.state.movies[0]['characters'])
     return (
       <div className='App'>
         <div className='cockpit'>
@@ -80,7 +73,7 @@ class App extends Component {
               </Route>
               <Route path='/movies'>
                 {this.state.error && <h2>{this.state.error}</h2>}
-                <Movies movies={this.state.movies} />
+                <Movies movies={this.state.movies} getCurrentMovieChars={this.getCurrentMovieChars}/>
                 {this.state.isLoading && 
                 <div className='load-icon'>
                   <p>LOADING</p>
@@ -91,7 +84,7 @@ class App extends Component {
                 <Favorites favorites={this.state.favorites}/>
               </Route>
               <Route path='/characters'>
-                <Characters characters/>
+                <Characters characters={this.state.currentCharacters}/>
               </Route>
             </Switch>
           </Router>
