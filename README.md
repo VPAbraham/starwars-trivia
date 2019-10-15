@@ -28,7 +28,7 @@ Utilizes:
 
 Desktop screenshot not indicative of actual screenview due to fixed nav.
 
-![Landing Page]()
+![Landing Page](https://user-images.githubusercontent.com/30779453/66874568-c4dd8580-ef68-11e9-9ebc-76b856e102af.png)
 
 ![Landing Page]()
 
