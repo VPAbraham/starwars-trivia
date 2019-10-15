@@ -15,6 +15,8 @@ const Characters = (props) => {
         species={character.species}
         relatedFilms={character.films}
         isFavorite={false}
+        addFav={props.addFav}
+        removeFav={props.removeFav}
       />
     </li>)
   });

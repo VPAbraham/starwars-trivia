@@ -62,6 +62,17 @@ class App extends Component {
     this.setState({ userName, userQuote, userSkill: skillLevel });
   }
 
+  addFavCharacter = ({name, homeworld, isFavorite, relatedFilms, species}) => {
+    let character = {name, homeworld, isFavorite: true, relatedFilms, species}
+    return !this.state.favorites.includes(character) ? this.setState({favorites: [...this.state.favorites, character]}) : null
+  }
+
+  removeFavCharacter = (character) => {
+    let newFavs = this.state.filter(char => !character)
+    // character.isFavorite = false;
+    this.setState({favorites: newFavs})
+  } 
+
   render() {
     return (
       <div className='App'>
@@ -84,7 +95,10 @@ class App extends Component {
                 <Favorites favorites={this.state.favorites}/>
               </Route>
               <Route path='/characters'>
-                <Characters characters={this.state.currentCharacters}/>
+                <Characters
+                  characters={this.state.currentCharacters}
+                  addFav={this.addFavCharacter}
+                  removeFav={this.removeFavCharacter} />
               </Route>
             </Switch>
           </Router>

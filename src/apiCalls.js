@@ -1,5 +1,6 @@
 export const getChars = (charUrls) => { 
-  const characterSets = charUrls.map(url => {
+  const characterSubset = charUrls.slice(0, 10)
+  const characterSets = characterSubset.map(url => {
     return fetch(url)
     .then(response => response.json())
       .then(character => { 
