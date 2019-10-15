@@ -49,7 +49,6 @@ class App extends Component {
         isLoading: false,
         movies: data,
       })
-    .catch(error => console.error(error))  
     })
     .catch(error => this.setState({
       error: error.message,
