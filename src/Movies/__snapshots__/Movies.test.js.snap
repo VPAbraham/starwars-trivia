@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Movie should match snapshot with all data passed in correctly 1`] = `ShallowWrapper {}`;
+exports[`Movie should match snapshot with all data passed in correctly 1`] = `
+<section
+  className="section section--movie-list"
+>
+  <ul
+    className="ul ul--movie-list"
+  />
+</section>
+`;

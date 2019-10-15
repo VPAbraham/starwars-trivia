@@ -81,9 +81,7 @@ class App extends Component {
     return !duplicates.length ? this.setState({favorites: [...this.state.favorites, character]}) : null
   }
 
-  removeFavCharacter = ({ name, homeworld, isFavorite, relatedFilms, species }) => {
-    console.log(name) 
-    let character = {name, homeworld, isFavorite: false, relatedFilms, species}
+  removeFavCharacter = ({ name }) => {
     let newFavs = this.state.favorites.filter(char => char.name !== name)
     this.setState({favorites: newFavs})
   } 
@@ -91,7 +89,6 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <Router>
           <div className='cockpit'>
             <Switch>
               <Route exact path='/'>
@@ -135,7 +132,6 @@ class App extends Component {
               msg='Favs'
             />
           </footer>  
-        </Router>
       </div>
     );
   }
