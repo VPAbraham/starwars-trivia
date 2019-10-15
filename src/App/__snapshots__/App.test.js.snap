@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="cockpit"
+  >
+    <Switch>
+      <Route
+        exact={true}
+        path="/"
+      >
+        <Landing
+          updateUserInfo={[Function]}
+        />
+      </Route>
+      <Route
+        path="/movies"
+      >
+        <Movies
+          getCurrentMovieChars={[Function]}
+          movies={Array []}
+        />
+        <div
+          className="load-icon"
+        >
+          <p>
+            LOADING
+          </p>
+          <img
+            alt="loading"
+            src="SWloadingIcon.gif"
+          />
+        </div>
+      </Route>
+      <Route
+        path="/favorites"
+      >
+        <Favorites
+          addFav={[Function]}
+          favorites={Array []}
+          removeFav={[Function]}
+        />
+      </Route>
+      <Route
+        path="/characters"
+      >
+        <Characters
+          addFav={[Function]}
+          characters={Array []}
+        />
+      </Route>
+    </Switch>
+  </div>
+  <footer
+    className="footer footer--user-info"
+  >
+    <p
+      className="p p--user-name"
+    />
+    <p
+      className="p p--user-quote"
+    />
+    <p
+      className="p p--user-skill"
+    />
+    <Button
+      method={[Function]}
+      msg="Eject"
+      path="/"
+    />
+    <Button
+      method={null}
+      msg="Favs"
+      path="/favorites"
+    />
+  </footer>
+</div>
+`;

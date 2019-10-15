@@ -1,3 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Landing should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Landing should match the snapshot 1`] = `
+<section
+  className="section section--landing-form"
+>
+  <img
+    alt="star wars"
+    className="img img--logo-main"
+    src="StarWarsLogo.png"
+  />
+  <h2>
+    Nerd Trove
+  </h2>
+  <form>
+    <label
+      htmlFor="userName"
+    >
+      Enter your name Jedi
+    </label>
+    <input
+      name="userName"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      htmlFor="movieQuote"
+    >
+      Enter your favorite Star Wars quote
+    </label>
+    <input
+      name="userQuote"
+      onChange={[Function]}
+      type="text"
+    />
+    <label
+      htmlFor="skillLevel"
+    >
+      What is your strength in the force?
+    </label>
+    <select
+      name="skillLevel"
+      onChange={[Function]}
+      required={true}
+    >
+      <option
+        value=""
+      >
+        Select your strength in the force...
+      </option>
+      <option
+        value="padawan"
+      >
+        Padawan
+      </option>
+      <option
+        value="jedi knight"
+      >
+        Jedi Knight
+      </option>
+      <option
+        value="jedi master"
+      >
+        Jedi Master
+      </option>
+    </select>
+    <button
+      onClick={[Function]}
+    >
+      Login
+    </button>
+  </form>
+  <footer
+    className="footer footer--user-bar"
+  >
+    <p
+      className="p p--user-info"
+    >
+      User Information Bar
+    </p>
+  </footer>
+</section>
+`;

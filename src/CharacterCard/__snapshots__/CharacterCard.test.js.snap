@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CharacterCard should match the snapshot 1`] = `
+<div
+  className="div div--character-card"
+>
+  <h3
+    className="h3 h3--character-card"
+  >
+    <img
+      className="img--fav-icon"
+      onClick={[Function]}
+      src="lightsaber.png"
+    />
+    Chris
+  </h3>
+  <ul>
+    <p
+      className="p p--char-data"
+    >
+      Homeworld
+    </p>
+    <li>
+      Earth
+    </li>
+    <li>
+      Population: 
+      7000000000
+    </li>
+    <p
+      className="p p--char-data"
+    >
+      Species
+    </p>
+    <li>
+      Human
+    </li>
+    <p
+      className="p p--char-data"
+    >
+      Appears in:
+    </p>
+    <ul>
+      <li
+        className="li li--char-films"
+        key="Chris"
+      >
+        Yup
+      </li>
+      <li
+        className="li li--char-films"
+        key="Chris"
+      >
+        Yuppers
+      </li>
+    </ul>
+  </ul>
+</div>
+`;
