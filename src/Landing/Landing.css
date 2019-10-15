@@ -53,7 +53,8 @@ button {
   color: #ffffff;
   font-size: 2rem;
   height: 6vh;
-  width: 15vw;
+  text-decoration: none;
+  width: 25vw;
 }
 
 .buttonLink {

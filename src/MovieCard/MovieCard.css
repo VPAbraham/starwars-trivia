@@ -25,3 +25,8 @@
 .button--movie-characters {
   margin: 10px 0 8px 0;
 }
+
+.link--to-character {
+  color: #ffffff;
+  text-decoration: none;
+}

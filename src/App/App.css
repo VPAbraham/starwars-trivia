@@ -23,5 +23,8 @@ ul {
 .load-icon {
   color: white;
   font-size: 50px;
+  position: fixed;
+  left: 30vw;
   text-align: center;
+  top: 0vh;
 }
