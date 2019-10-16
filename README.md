@@ -1,6 +1,8 @@
 # Star Wars Nerd Trove
 #### A Turing Mod 3 Project
 
+[Link to Project](https://vpabraham.github.io/starwars-trivia/#/)
+
 
 ## Challenge
 To build a React web application that allows users to view various data regarding different Star Wars films and characters.
