@@ -32,11 +32,10 @@ Desktop screenshot not indicative of actual screenview due to fixed nav.
 
 ![Landing Page](https://user-images.githubusercontent.com/30779453/66874568-c4dd8580-ef68-11e9-9ebc-76b856e102af.png)
 
-![Landing Page]()
+![Characters-page](https://user-images.githubusercontent.com/30779453/66942356-27389380-f006-11e9-8b16-cedcaf221ec6.png)
 
-![Landing Page]()
+![Films-page](https://user-images.githubusercontent.com/30779453/66942363-2a338400-f006-11e9-96f2-4c31f4d3543d.png)
 
-![Landing Page]()
 
 
 ## Credits
