@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/starwars-trivia/static/css/main.9a4e0d0a.chunk.css",
+    "main.js": "/starwars-trivia/static/js/main.faeda25f.chunk.js",
+    "main.js.map": "/starwars-trivia/static/js/main.faeda25f.chunk.js.map",
+    "runtime-main.js": "/starwars-trivia/static/js/runtime-main.e49bdc03.js",
+    "runtime-main.js.map": "/starwars-trivia/static/js/runtime-main.e49bdc03.js.map",
+    "static/js/2.845f9e1d.chunk.js": "/starwars-trivia/static/js/2.845f9e1d.chunk.js",
+    "static/js/2.845f9e1d.chunk.js.map": "/starwars-trivia/static/js/2.845f9e1d.chunk.js.map",
+    "index.html": "/starwars-trivia/index.html",
+    "precache-manifest.ac4c32dbf75895fa5d3154d51061d778.js": "/starwars-trivia/precache-manifest.ac4c32dbf75895fa5d3154d51061d778.js",
+    "service-worker.js": "/starwars-trivia/service-worker.js",
+    "static/css/main.9a4e0d0a.chunk.css.map": "/starwars-trivia/static/css/main.9a4e0d0a.chunk.css.map",
+    "static/media/SWloadingIcon.gif": "/starwars-trivia/static/media/SWloadingIcon.dd06c3cd.gif",
+    "static/media/StarWarsLogo.png": "/starwars-trivia/static/media/StarWarsLogo.59796935.png",
+    "static/media/App.css": "/starwars-trivia/static/media/starry-night.75c1b027.jpg",
+    "static/media/episode-1.png": "/starwars-trivia/static/media/episode-1.20cb58c1.png",
+    "static/media/episode-2.png": "/starwars-trivia/static/media/episode-2.669d3b1b.png",
+    "static/media/episode-3.png": "/starwars-trivia/static/media/episode-3.bfae345d.png",
+    "static/media/episode-4.png": "/starwars-trivia/static/media/episode-4.c28b4d47.png",
+    "static/media/episode-5.png": "/starwars-trivia/static/media/episode-5.0095edd6.png",
+    "static/media/episode-6.png": "/starwars-trivia/static/media/episode-6.5337a25d.png",
+    "static/media/episode-7.png": "/starwars-trivia/static/media/episode-7.26eeed3c.png",
+    "static/media/lightsaber.png": "/starwars-trivia/static/media/lightsaber.1742b375.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e49bdc03.js",
+    "static/js/2.845f9e1d.chunk.js",
+    "static/css/main.9a4e0d0a.chunk.css",
+    "static/js/main.faeda25f.chunk.js"
+  ]
+}
